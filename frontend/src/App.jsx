@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-
+const API_BASE_URL = "https://mission-unhackable-2.onrender.com";
 function App() {
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/check-url', {
+      const response = await fetch(`${API_BASE_URL}/check-url`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
